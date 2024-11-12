@@ -1,0 +1,37 @@
+name: Checkov Terraform Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read  # Only give read access to the repository contents
+  actions: write  # Allow write access to actions (this is just an example)
+  issues: write   # Allow write access to issues (example)
+
+# Add other specific permissions as needed...
+
+
+jobs:
+  checkov-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Checkov
+        run: |
+          pip install checkov
+
+      - name: Run Checkov
+        run: |
+          checkov -d .

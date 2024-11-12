@@ -36,8 +36,8 @@ module "route_tables" {
 module "ec2" {
   source = "./modules/ec2"
 
-  public_instance_ami   = "ami-0866a3c8686eaeeba"          # AMI for public instance
-  private_instance_ami  = "ami-04a490b24f9b02138"          # AMI for private instance
+  public_instance_ami   = "ami-005fc0f236362e99f"          # AMI for public instance
+  private_instance_ami  = "ami-055a0bf7c6225776d"          # AMI for private instance
   public_instance_type  = "t2.micro"                       # Instance type for public instance
   private_instance_type = "t2.micro"                       # Instance type for private instance
   public_subnet_id      = module.vpc.public_subnet_ids[0]  # Use first public subnet

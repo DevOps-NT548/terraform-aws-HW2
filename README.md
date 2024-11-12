@@ -58,11 +58,18 @@ aws_secret_access_key=<your-key>
 
 #### 3. Chạy checkov:
 
-- Ta chạy những dòng lệnh sau:
+- Ta chạy dòng lệnh sau:
 
 ```
 checkov -b /folder_name
 ```
+- skip:
+
+  CKV2_AWS_5
+
+  CKV2_AWS_11
+  
+  CKV2_AWS_12
 
 Đảm bảo pass checkov test
 
