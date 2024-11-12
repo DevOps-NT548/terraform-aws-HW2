@@ -1,4 +1,4 @@
-name: 'Terraform-checkov'
+name: 'Deploy'
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Terraform-checkov'
+    name: 'Deploy'
     runs-on: ubuntu-latest
     environment: production
 
